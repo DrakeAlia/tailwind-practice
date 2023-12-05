@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 export default function Example() {
-  <header />
+  <header />;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="bg-white">
