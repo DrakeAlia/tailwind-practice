@@ -7,18 +7,25 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { smythe } from "./ui/font";
 import { ArrowRight, Instagram, Linkedin, Twitter } from "lucide-react";
+import Navbar from "./example/nav/page";
 
 const navigation = [
   { name: "About Us", href: "#" },
-  { name: "Products", href: "#" },
   { name: "Our Team", href: "#" },
+  { name: "Products", href: "#" },
   { name: "Recipes", href: "#" },
+  {
+    name: "Instagram",
+    description: "Connect with us on Instagram",
+    href: "#",
+    icon: Instagram,
+  },
 ];
 
 export default function SplashPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       <Image
         className="absolute inset-0 object-cover w-full h-full"
         src="/hero-desktop.jpeg"
@@ -26,7 +33,8 @@ export default function SplashPage() {
         width={1000}
         height={760}
       />
-      <header className="border-b-2 border-gray-600 absolute inset-x-0 top-0 z-50">
+      <header className="absolute inset-x-0 top-0 z-50">
+        {/* <Navbar /> */}
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -58,20 +66,27 @@ export default function SplashPage() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`${smythe.className} bg-gray-600 px-5 py-2.5 rounded-full ring-1 hover:ring-blue-500 text-lg font-semibold leading-6 text-yellow-500`}
+                className={`${smythe.className} bg-gray-800 bg-opacity-50 px-5 py-2.5 rounded-full ring-1 hover:ring-green-500 text-lg font-semibold leading-6 text-yellow-500`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="bg-gray-100"></div>
-            <Instagram className="h-6 w-6 text-yellow-500" aria-hidden="true" />
-            <Twitter className="h-6 w-6 text-yellow-500" aria-hidden="true" />
-            <Linkedin className="h-6 w-6 text-yellow-500" aria-hidden="true" />
+            <div className="lg:flex lg:gap-x-5 items-center bg-gray-800 bg-opacity-50 px-5 py-2.5 rounded-full">
+              <Instagram
+                className="h-6 w-6 text-yellow-500"
+                aria-hidden="true"
+              />
+              <Twitter className="h-6 w-6 text-yellow-500" aria-hidden="true" />
+              <Linkedin
+                className="h-6 w-6 text-yellow-500"
+                aria-hidden="true"
+              />
+            </div>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               href="#"
-              className={`${smythe.className} bg-gray-600 px-5 py-2.5 rounded-full ring-1 hover:ring-blue-500 text-lg font-semibold leading-6 text-yellow-500`}
+              className={`${smythe.className} bg-gray-800 bg-opacity-50 px-5 py-2.5 rounded-full ring-1 hover:ring-green-500 text-lg font-semibold leading-6 text-yellow-500`}
             >
               {/* Log in
             <ArrowRight /> */}
@@ -79,6 +94,7 @@ export default function SplashPage() {
             </Link>
           </div>
         </nav>
+        <div className="border-t border-gray-500"></div>
         <Dialog
           as="div"
           className="lg:hidden"
@@ -140,16 +156,8 @@ export default function SplashPage() {
           aria-hidden="true"
         ></div>
         <div className="flex-row mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            {/* <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{" "}
-              <Link href="#" className="font-semibold text-indigo-600">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div> */}
-          </div>
-          <div className=" text-center ">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
+          <div className="bg-blue-500 bg-opacity-40 py-2.5 rounded-xl text-center">
             <h1
               className={`${smythe.className} text-4xl font-bold tracking-tight text-yellow-500 sm:text-6xl`}
             >
@@ -176,18 +184,23 @@ export default function SplashPage() {
               </Link> */}
               <Link
                 href="#"
-                className={`${smythe.className} bg-gray-600 px-20 py-2.5 rounded-full ring-1 hover:ring-blue-500 text-2xl font-semibold leading-6 text-yellow-500`}
+                className={`${smythe.className} bg-gray-800 bg-opacity-50 px-20 py-2.5 rounded-full ring-1 hover:ring-green-500 text-2xl font-semibold leading-6 text-yellow-500`}
               >
                 Shop <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
-        ></div>
+        ></div> */}
       </div>
+      {/* <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div className="bg-blue-500 bg-opacity-40 py-2.5 rounded-xl text-center">
+          
+        </div>
+      </div> */}
     </div>
   );
 }
