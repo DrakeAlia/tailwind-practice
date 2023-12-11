@@ -18,20 +18,13 @@ const navigation = [
 export default function SplashPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="bg-black">
+    <div>
       <Image
-        className="absolute object-cover w-full h-full hidden md:block"
-        src="/hero-desktop.png"
+        className="absolute object-cover w-full h-full"
+        src="/desktop.png"
         alt=""
         width={1000}
         height={760}
-      />
-      <Image
-        className="absolute object-cover w-full h-full block md:hidden"
-        src="/mobile-desktop.png"
-        alt=""
-        width={560}
-        height={620}
       />
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
@@ -57,7 +50,7 @@ export default function SplashPage() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-8 w-8" aria-hidden="true" />
             </button>
           </div>
           {/* Navbar */}
@@ -93,7 +86,7 @@ export default function SplashPage() {
           </div>
         </nav>
         <div className="border-t border-gray-500"></div>
-        {/* Dropdown */}
+        {/* Dropdown Menu */}
         <Dialog
           as="div"
           className="lg:hidden"
